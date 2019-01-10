@@ -33,6 +33,10 @@ namespace unit_test
             Console.WriteLine("                   3. Make a Deposit");
             Console.WriteLine("                   4. Donation to Nigerian Prince in to flee presecution  ");
             Console.WriteLine("                   5. Exit ");
+
+            Console.WriteLine("                                     ");
+            Console.WriteLine("                                     ");
+
         }
         public static void MenuSelection(int selection)
         {
