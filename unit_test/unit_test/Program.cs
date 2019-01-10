@@ -37,9 +37,24 @@ namespace unit_test
             Console.WriteLine("                                     ");
             Console.WriteLine("                                     ");
 
+
+            try
+            {
+                int selection = Convert.ToInt32(Console.ReadLine());
+                MenuSelection(selection);
+            }
+
+            catch (Exception)
+            {
+                Console.Write("Improper selection. Make another selection");
+                Console.Clear();
+            }
+           
+
         }
         public static void MenuSelection(int selection)
         {
+            Console.ReadLine();
             //switch is a selection statement that chooses a single switch section to execute from a list of candidates based on a pattern match with the match expression.
             switch (selection)
             {
@@ -78,7 +93,7 @@ namespace unit_test
 
                     Donation();
                     // Obtains the next character or function key pressed by the user. The pressed key is displayed in the console window.
-                    Console.ReadKey();
+                    Console.ReadLine();
                     // Clears the console buffer and corresponding console window of display information.
                     Console.Clear();
                     break;
