@@ -31,7 +31,7 @@ namespace unit_test
             Console.WriteLine("                   1. Check Balance");
             Console.WriteLine("                   2. Make a Withdrawl");
             Console.WriteLine("                   3. Make a Deposit");
-            Console.WriteLine("                   4. Donation to Nigerian Prince in to flee presecution  ");
+            Console.WriteLine("                   4. Donation to Nigerian Prince flee from presecution  ");
             Console.WriteLine("                   5. Exit ");
 
             Console.WriteLine("                                     ");
