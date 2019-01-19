@@ -178,7 +178,16 @@ namespace unit_test
         }           // method to subtract amount from balance
         public static int Withdrawl(int MyBalance, int amount)
         {
-            return MyBalance - amount;
+            try
+            {
+                { 
+                return MyBalance - amount;
+                }
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
         }
         // method to add amount to balance 
         public static int Deposit(int MyBalance, int amount)
