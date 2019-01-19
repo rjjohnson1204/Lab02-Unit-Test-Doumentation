@@ -34,7 +34,7 @@ namespace unit_test
             Console.WriteLine("                   4. Donation to Nigerian Prince flee from presecution  ");
             Console.WriteLine("                   5. Exit ");
 
-            Console.WriteLine("                                     ");
+            Console.WriteLine("                   Please choose 1, 2, 3, 4, or 5             ");
             Console.WriteLine("                                     ");
 
 
@@ -54,25 +54,24 @@ namespace unit_test
         }
         public static void MenuSelection(int selection)
         {
-            Console.ReadLine();
+            
             //switch is a selection statement that chooses a single switch section to execute from a list of candidates based on a pattern match with the match expression.
             switch (selection)
             {
                 case 1:
                     //Display balance
-
-                    //CheckBalance(MyBalance);
-                    // Obtains the next character or function key pressed by the user. The pressed key is displayed in the console window.
-                    Console.ReadKey();
-                    // Clears the console buffer and corresponding console window of display information.
                     Console.Clear();
+                    // Obtains the next character or function key pressed by the user. The pressed key is displayed in the console window.
+                    Console.WriteLine($"Your current balance is {MyBalance}");
+                    // Clears the console buffer and corresponding console window of display information.
                     break;
 
                 case 2:
                     //Make withdrawl from MyBalance
 
-                    //Withdrawl(MyBalance);
-                    // Obtains the next character or function key pressed by the user. The pressed key is displayed in the console window.
+                    //Withdrawl(amount);
+                    //ask user how much they would like to withdraw
+                    Console.WriteLine("How much would you like to withdraw?");
                     Console.ReadKey();
                     // Clears the console buffer and corresponding console window of display information.
                     Console.Clear();
@@ -110,6 +109,12 @@ namespace unit_test
 
             }
         }
+
+        public static void CheckBalance()
+        {
+
+        }
+
         public static void Donation()
         {
             Console.ReadLine();
