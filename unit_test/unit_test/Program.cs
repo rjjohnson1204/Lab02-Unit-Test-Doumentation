@@ -92,12 +92,16 @@ namespace unit_test
                         //Make Deposit into MyBalance
 
                         int addAmount;
-                       
-                     // Obtains the next character or function key pressed by the user. The pressed key is displayed in the console window.
-                     Console.ReadKey();
-                     // Clears the console buffer and corresponding console window of display information.
-                     Console.Clear();
-                     break;
+                        Console.Clear();
+                        // ask user how much they would like to deposit
+                        Console.WriteLine("How much would you like to depsit?");
+                        // converts user entry from string to int
+                        addAmount = Convert.ToInt32(Console.ReadLine());
+                        // creates new balance afrer addition 
+                        MyBalance = Deposit(MyBalance, addAmount);
+                        Console.WriteLine($"${addAmount} has been added to your account. ")
+                               
+                        break;
 
                  case 4:
                         //Loss of retirement fund. Identity Stolen. BANKRUPCY!
@@ -168,12 +172,13 @@ namespace unit_test
                   {
                       return MyBalance - amount;
                   }
-                  
-                  //public static void donation()
-                  //{
-                  //    Console.ReadLine();
-                  
-                  //    Console.ReadLine();
+
+                 public static int Deposit(int MyBalance, int amount)
+                 {
+                      return MyBalance + amount;
+                 }
+
+
     }
 }
 
