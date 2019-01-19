@@ -47,6 +47,10 @@ namespace unit_test
                     Console.Write("Improper selection. Make another selection");
                     Console.Clear();
                 }
+                finally
+                {
+                    ATM();
+                }
 
 
             }
@@ -56,33 +60,36 @@ namespace unit_test
                 //switch is a selection statement that chooses a single switch section to execute from a list of candidates based on a pattern match with the match expression.
                 switch (selection)
                 {
-                 case 1:
                      //Display balance
-                     Console.Clear();
-                     // Obtains the next character or function key pressed by the user. The pressed key is displayed in the console window.
-                     Console.WriteLine($"Your current balance is {MyBalance}");
+                 case 1:
                      // Clears the console buffer and corresponding console window of display information.
+                     Console.Clear();
+                     // tells user current balance
+                     Console.WriteLine($"Your current balance is {MyBalance}");
                      break;
 
-                 case 2:
                      //Make withdrawl from MyBalance
-
+                 case 2:
                      int withdrawlAmount;
-                     Console.Clear();
+                        // Clears the console buffer and corresponding console window of display information.
+
+                        Console.Clear();
                      //ask user how much they would like to withdraw
                      Console.WriteLine("How much would you like to withdraw?");
+                        // converts user input of a  string into an int
                      withdrawlAmount = Convert.ToInt32(Console.ReadLine());
-
-                     // Clears the console buffer and corresponding console window of display information.
                      if (withdrawlAmount > MyBalance)
                      {
-                         Console.Clear();
+                            // tells user they cannot with draw this amount
                          Console.WriteLine(" Insufficient funds. ");
+                     // Clears the console buffer and corresponding console window of display information.
+                         Console.Clear();
                      }
                      else
                      {
                          MyBalance = Withdrawl(MyBalance, withdrawlAmount);
                          Console.Clear();
+                            // withdraws amount from MyBalance
                          Console.WriteLine($"{withdrawlAmount} has been withdrawn from your account.");
 
                      }
@@ -92,6 +99,8 @@ namespace unit_test
                         //Make Deposit into MyBalance
 
                         int addAmount;
+                        // Clears the console buffer and corresponding console window of display information.
+
                         Console.Clear();
                         // ask user how much they would like to deposit
                         Console.WriteLine("How much would you like to depsit?");
@@ -99,15 +108,16 @@ namespace unit_test
                         addAmount = Convert.ToInt32(Console.ReadLine());
                         // creates new balance afrer addition 
                         MyBalance = Deposit(MyBalance, addAmount);
-                        Console.WriteLine($"${addAmount} has been added to your account. ")
+                        Console.WriteLine($"${addAmount} has been added to your account. ");
                                
                         break;
 
                  case 4:
                         //Loss of retirement fund. Identity Stolen. BANKRUPCY!
 
-                       
-                      Console.WriteLine($@"
+                        Console.ReadKey();
+
+                        Console.WriteLine($@"
                   
                   
                             Loss of retirement fund. Identity Stolen.
@@ -143,23 +153,20 @@ namespace unit_test
                     ´´´´´´¶¶´´´¶¶¶´´´´´´´´´´´¶¶¶¶¶¶¶¶¶´´´´´´´´´´´¶¶¶´´´¶¶´´´´´´
                     ´´´´´´¶¶´´¶¶´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´¶¶´´¶¶´´´´´´
                     ´´´´´´´¶¶¶¶´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´¶¶¶¶´´´´´´´ 
-                          ");
+                                             GAME OVER    ");
 
+                        Console.ReadKey();
 
-                     // Obtains the next character or function key pressed by the user. The pressed key is displayed in the console window.
-                        Console.ReadLine();
-                     // Clears the console buffer and corresponding console window of display information.
-                     Console.Clear();
+                        // Clears the console buffer and corresponding console window of display information.
+                        Console.Clear();
                      break;
 
                  case 5:
-                     //Exit of ATM
-
-                     //Exit();
-                     // Obtains the next character or function key pressed by the user. The pressed key is displayed in the console window.
+                     
+                     Console.Clear();
+                        Console.Write(" Thank you for your business." );
                      Console.ReadKey();
                      // Clears the console buffer and corresponding console window of display information.
-                     Console.Clear();
                      break;
 
                 }
@@ -167,12 +174,12 @@ namespace unit_test
 
              }
 
-        }
+        }           // method to subtract amount from balance
                   public static int Withdrawl(int MyBalance, int amount)
                   {
                       return MyBalance - amount;
                   }
-
+                    // method to add amount to balance 
                  public static int Deposit(int MyBalance, int amount)
                  {
                       return MyBalance + amount;
