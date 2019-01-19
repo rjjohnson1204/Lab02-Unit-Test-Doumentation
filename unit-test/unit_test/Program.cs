@@ -3,15 +3,15 @@
 
 namespace unit_test
 {
-     public class Program
+    public class Program
     {
         static void Main(string[] args)
         {
 
-             int MyBalance = 5000;
+            int MyBalance = 5000;
 
             ATM();
-            
+
             void ATM()
             {
                 //intro to atm//
@@ -55,48 +55,48 @@ namespace unit_test
 
 
             }
-             void MenuSelection(int selection)
+            void MenuSelection(int selection)
             {
 
                 //switch is a selection statement that chooses a single switch section to execute from a list of candidates based on a pattern match with the match expression.
                 switch (selection)
                 {
-                     //Display balance
-                 case 1:
-                     // Clears the console buffer and corresponding console window of display information.
-                     Console.Clear();
-                     // tells user current balance
-                     Console.WriteLine($"Your current balance is {MyBalance}");
-                     break;
+                    //Display balance
+                    case 1:
+                        // Clears the console buffer and corresponding console window of display information.
+                        Console.Clear();
+                        // tells user current balance
+                        Console.WriteLine($"Your current balance is {MyBalance}");
+                        break;
 
-                     //Make withdrawl from MyBalance
-                 case 2:
-                     int withdrawlAmount;
+                    //Make withdrawl from MyBalance
+                    case 2:
+                        int withdrawlAmount;
                         // Clears the console buffer and corresponding console window of display information.
 
                         Console.Clear();
-                     //ask user how much they would like to withdraw
-                     Console.WriteLine("How much would you like to withdraw?");
+                        //ask user how much they would like to withdraw
+                        Console.WriteLine("How much would you like to withdraw?");
                         // converts user input of a  string into an int
-                     withdrawlAmount = Convert.ToInt32(Console.ReadLine());
-                     if (withdrawlAmount > MyBalance)
-                     {
+                        withdrawlAmount = Convert.ToInt32(Console.ReadLine());
+                        if (withdrawlAmount > MyBalance)
+                        {
                             // tells user they cannot with draw this amount
-                         Console.WriteLine(" Insufficient funds. ");
-                     // Clears the console buffer and corresponding console window of display information.
-                         Console.Clear();
-                     }
-                     else
-                     {
-                         MyBalance = Withdrawl(MyBalance, withdrawlAmount);
-                         Console.Clear();
+                            Console.WriteLine(" Insufficient funds. ");
+                            // Clears the console buffer and corresponding console window of display information.
+                            Console.Clear();
+                        }
+                        else
+                        {
+                            MyBalance = Withdrawl(MyBalance, withdrawlAmount);
+                            Console.Clear();
                             // withdraws amount from MyBalance
-                         Console.WriteLine($"{withdrawlAmount} has been withdrawn from your account.");
+                            Console.WriteLine($"{withdrawlAmount} has been withdrawn from your account.");
 
-                     }
-                     break;
+                        }
+                        break;
 
-                 case 3:
+                    case 3:
                         //Make Deposit into MyBalance
 
                         int addAmount;
@@ -110,10 +110,10 @@ namespace unit_test
                         // creates new balance afrer addition 
                         MyBalance = Deposit(MyBalance, addAmount);
                         Console.WriteLine($"${addAmount} has been added to your account. ");
-                               
+
                         break;
 
-                 case 4:
+                    case 4:
                         //Loss of retirement fund. Identity Stolen. BANKRUPCY!
 
                         Console.ReadKey();
@@ -160,42 +160,32 @@ namespace unit_test
 
                         // Clears the console buffer and corresponding console window of display information.
                         Console.Clear();
-                     break;
+                        break;
 
-                 case 5:
-                     
-                     Console.Clear();
-                        Console.Write(" Thank you for your business." );
-                     Console.ReadKey();
-                     // Clears the console buffer and corresponding console window of display information.
-                     break;
+                    case 5:
+
+                        Console.Clear();
+                        Console.Write(" Thank you for your business.");
+                        Console.ReadKey();
+                        // Clears the console buffer and corresponding console window of display information.
+                        break;
 
                 }
 
 
-             }
+            }
 
         }           // method to subtract amount from balance
-                  public static int Withdrawl(int MyBalance, int amount)
-                  {
-                      return MyBalance - amount;
-                  }
-                    // method to add amount to balance 
-                 public static int Deposit(int MyBalance, int amount)
-                 {
-                      return MyBalance + amount;
-                 }
+        public static int Withdrawl(int MyBalance, int amount)
+        {
+            return MyBalance - amount;
+        }
+        // method to add amount to balance 
+        public static int Deposit(int MyBalance, int amount)
+        {
+            return MyBalance + amount;
+        }
 
 
     }
 }
-
-
-
-
-
-       
-
-    
-
-
