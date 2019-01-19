@@ -5,7 +5,7 @@ using Xunit;
 namespace XUnitTestProject1
 {
     public class UnitTest1
-    {   
+    {
         //Testing of deposit method
         [Fact]
         public void Addition1()
